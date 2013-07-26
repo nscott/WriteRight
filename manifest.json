@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "WriteRight",
+  "description": "Right click on a text area for more info.",
+  "version": "1.0",
+
+  "permissions": ["contextMenus"],
+  "icons": {
+      "16": "icon-tiny.png",
+      "48": "icon-mid.png",
+      "128": "icon-big.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["primary.js"]
+  },
+  "content_scripts": [
+    {
+      "js": ["writeright.js"],
+      "all_frames": true,
+      "matches": ["http://*/*", "https://*/*", "file://*/*"]
+    }
+  ]
+}
